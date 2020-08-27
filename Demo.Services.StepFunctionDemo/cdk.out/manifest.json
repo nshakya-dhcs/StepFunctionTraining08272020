@@ -1,0 +1,389 @@
+{
+  "version": "5.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "StepFunctionDemoStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://342600918501/us-west-2",
+      "properties": {
+        "templateFile": "StepFunctionDemoStack.template.json"
+      },
+      "metadata": {
+        "/StepFunctionDemoStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e.zip",
+              "id": "d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e",
+              "packaging": "file",
+              "sourceHash": "d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e",
+              "s3BucketParameter": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3BucketB3AF5EC0",
+              "s3KeyParameter": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8",
+              "artifactHashParameter": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eArtifactHash93FE856C"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:312:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:130:29)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:58:25)",
+              "Stack.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack.js:358:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:62:31)",
+              "new Asset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:36:44)",
+              "AssetCode.bind (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:137:26)",
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:84:33)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/StepFunctionDemoBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StepFunctionDemoBucket685F728F",
+            "trace": [
+              "new Bucket (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.js:421:26)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/OddOrEvenFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OddOrEvenFunctionServiceRoleE025EE4B",
+            "trace": [
+              "new Role (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:44:22)",
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:66:35)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/OddOrEvenFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OddOrEvenFunction81FC086C",
+            "trace": [
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:115:26)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/AssetParameters/d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3BucketB3AF5EC0",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:58:25)",
+              "Stack.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack.js:358:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:62:31)",
+              "new Asset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:36:44)",
+              "AssetCode.bind (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:137:26)",
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:84:33)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/AssetParameters/d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:58:25)",
+              "Stack.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack.js:358:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:62:31)",
+              "new Asset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:36:44)",
+              "AssetCode.bind (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:137:26)",
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:84:33)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/AssetParameters/d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eArtifactHash93FE856C",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:120:22)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:58:25)",
+              "Stack.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack.js:358:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:62:31)",
+              "new Asset (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:36:44)",
+              "AssetCode.bind (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:137:26)",
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:84:33)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/Process1Function/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Process1FunctionServiceRoleDBEC1444",
+            "trace": [
+              "new Role (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:44:22)",
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:66:35)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/Process1Function/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Process1Function64F04A06",
+            "trace": [
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:115:26)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/Process2Function/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Process2FunctionServiceRole09D5773F",
+            "trace": [
+              "new Role (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:44:22)",
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:66:35)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/Process2Function/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Process2Function273202F1",
+            "trace": [
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:115:26)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/Process11Function/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Process11FunctionServiceRoleD344F4A8",
+            "trace": [
+              "new Role (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:44:22)",
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:66:35)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/Process11Function/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Process11Function70180133",
+            "trace": [
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:115:26)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/Process12Function/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Process12FunctionServiceRole48072318",
+            "trace": [
+              "new Role (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:44:22)",
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:66:35)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/Process12Function/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Process12FunctionServiceRoleDefaultPolicy5BFD3633",
+            "trace": [
+              "new Policy (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:42:26)",
+              "Role.addToPrincipalPolicy (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:173:34)",
+              "Function.addToPrincipal (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:82:65)",
+              "Function.addToPrincipalOrResource (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:39:30)",
+              "Bucket.grant (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.js:289:31)",
+              "Bucket.grantReadWrite (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.js:236:21)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7746:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7746:25",
+              "Kernel._ensureSync (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8371:20)",
+              "Kernel.invoke (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7745:26)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/StepFunctionDemoStack/Process12Function/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Process12FunctionD2B0C67B",
+            "trace": [
+              "new Function (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\jsii-kernel-k1wexC\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:115:26)",
+              "C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:8395:20)",
+              "Kernel._create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7922:26)",
+              "Kernel.create (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7446:28)",
+              "KernelHost.run (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7384:14)",
+              "Immediate._onImmediate (C:\\Users\\nshakya\\AppData\\Local\\Temp\\1\\m1fk5rxz.phh\\jsii-runtime.js:7387:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/cloud-assembly-schema": "1.60.0",
+      "@aws-cdk/cx-api": "1.60.0",
+      "@aws-cdk/core": "1.60.0",
+      "@aws-cdk/region-info": "1.60.0",
+      "@aws-cdk/aws-iam": "1.60.0",
+      "@aws-cdk/aws-events": "1.60.0",
+      "@aws-cdk/aws-kms": "1.60.0",
+      "@aws-cdk/aws-s3": "1.60.0",
+      "@aws-cdk/aws-cloudwatch": "1.60.0",
+      "@aws-cdk/aws-logs": "1.60.0",
+      "@aws-cdk/assets": "1.60.0",
+      "@aws-cdk/aws-s3-assets": "1.60.0",
+      "@aws-cdk/aws-ssm": "1.60.0",
+      "@aws-cdk/aws-ec2": "1.60.0",
+      "@aws-cdk/aws-efs": "1.60.0",
+      "@aws-cdk/aws-sqs": "1.60.0",
+      "@aws-cdk/aws-codeguruprofiler": "1.60.0",
+      "@aws-cdk/aws-autoscaling-common": "1.60.0",
+      "@aws-cdk/aws-applicationautoscaling": "1.60.0",
+      "@aws-cdk/aws-lambda": "1.60.0",
+      "@aws-cdk/aws-stepfunctions": "1.60.0",
+      "@aws-cdk/aws-elasticloadbalancing": "1.60.0",
+      "@aws-cdk/aws-route53": "1.60.0",
+      "@aws-cdk/aws-certificatemanager": "1.60.0",
+      "@aws-cdk/aws-elasticloadbalancingv2": "1.60.0",
+      "@aws-cdk/aws-sns": "1.60.0",
+      "@aws-cdk/aws-autoscaling": "1.60.0",
+      "@aws-cdk/aws-cloudformation": "1.60.0",
+      "@aws-cdk/custom-resources": "1.60.0",
+      "@aws-cdk/aws-ecr": "1.60.0",
+      "@aws-cdk/aws-ecr-assets": "1.60.0",
+      "@aws-cdk/aws-servicediscovery": "1.60.0",
+      "@aws-cdk/aws-sam": "1.60.0",
+      "@aws-cdk/aws-secretsmanager": "1.60.0",
+      "@aws-cdk/aws-sns-subscriptions": "1.60.0",
+      "@aws-cdk/aws-autoscaling-hooktargets": "1.60.0",
+      "@aws-cdk/aws-apigateway": "1.60.0",
+      "@aws-cdk/aws-cloudfront": "1.60.0",
+      "@aws-cdk/aws-cognito": "1.60.0",
+      "@aws-cdk/aws-route53-targets": "1.60.0",
+      "@aws-cdk/aws-ecs": "1.60.0",
+      "@aws-cdk/aws-batch": "1.60.0",
+      "@aws-cdk/aws-dynamodb": "1.60.0",
+      "@aws-cdk/aws-glue": "1.60.0",
+      "@aws-cdk/aws-stepfunctions-tasks": "1.60.0",
+      "jsii-runtime": "DotNet/3.1.4/.NETCoreApp,Version=v3.1/1.0.0.0"
+    }
+  }
+}

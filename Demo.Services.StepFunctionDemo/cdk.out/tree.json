@@ -1,0 +1,760 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "StepFunctionDemoStack": {
+        "id": "StepFunctionDemoStack",
+        "path": "StepFunctionDemoStack",
+        "children": {
+          "StepFunctionDemoBucket": {
+            "id": "StepFunctionDemoBucket",
+            "path": "StepFunctionDemoStack/StepFunctionDemoBucket",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "StepFunctionDemoStack/StepFunctionDemoBucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "bucketEncryption": {
+                      "serverSideEncryptionConfiguration": [
+                        {
+                          "serverSideEncryptionByDefault": {
+                            "sseAlgorithm": "AES256"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "Notifications": {
+                "id": "Notifications",
+                "path": "StepFunctionDemoStack/StepFunctionDemoBucket/Notifications"
+              }
+            }
+          },
+          "OddOrEvenFunction": {
+            "id": "OddOrEvenFunction",
+            "path": "StepFunctionDemoStack/OddOrEvenFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "StepFunctionDemoStack/OddOrEvenFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "StepFunctionDemoStack/OddOrEvenFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "StepFunctionDemoStack/OddOrEvenFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "StepFunctionDemoStack/OddOrEvenFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "StepFunctionDemoStack/OddOrEvenFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "StepFunctionDemoStack/OddOrEvenFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3BucketB3AF5EC0"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "Demo.Services.Lambda::Demo.Services.Lambda.Functions::OddOrEvenFunction",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "OddOrEvenFunctionServiceRoleE025EE4B",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "dotnetcore3.1",
+                    "description": "Lambda Function that calculates odd or even",
+                    "memorySize": 512,
+                    "timeout": 300
+                  }
+                }
+              },
+              "$LATEST": {
+                "id": "$LATEST",
+                "path": "StepFunctionDemoStack/OddOrEvenFunction/$LATEST"
+              }
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "StepFunctionDemoStack/AssetParameters",
+            "children": {
+              "d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e": {
+                "id": "d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e",
+                "path": "StepFunctionDemoStack/AssetParameters/d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "StepFunctionDemoStack/AssetParameters/d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "StepFunctionDemoStack/AssetParameters/d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "StepFunctionDemoStack/AssetParameters/d858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126e/ArtifactHash"
+                  }
+                }
+              }
+            }
+          },
+          "Process1Function": {
+            "id": "Process1Function",
+            "path": "StepFunctionDemoStack/Process1Function",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "StepFunctionDemoStack/Process1Function/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "StepFunctionDemoStack/Process1Function/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "StepFunctionDemoStack/Process1Function/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "StepFunctionDemoStack/Process1Function/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "StepFunctionDemoStack/Process1Function/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "StepFunctionDemoStack/Process1Function/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3BucketB3AF5EC0"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "Demo.Services.Lambda::Demo.Services.Lambda.Functions::Process1Function",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "Process1FunctionServiceRoleDBEC1444",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "dotnetcore3.1",
+                    "description": "Demo Lambda Function that runs process1",
+                    "memorySize": 512,
+                    "timeout": 300
+                  }
+                }
+              },
+              "$LATEST": {
+                "id": "$LATEST",
+                "path": "StepFunctionDemoStack/Process1Function/$LATEST"
+              }
+            }
+          },
+          "Process2Function": {
+            "id": "Process2Function",
+            "path": "StepFunctionDemoStack/Process2Function",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "StepFunctionDemoStack/Process2Function/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "StepFunctionDemoStack/Process2Function/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "StepFunctionDemoStack/Process2Function/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "StepFunctionDemoStack/Process2Function/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "StepFunctionDemoStack/Process2Function/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "StepFunctionDemoStack/Process2Function/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3BucketB3AF5EC0"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "Demo.Services.Lambda::Demo.Services.Lambda.Functions::Process2Function",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "Process2FunctionServiceRole09D5773F",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "dotnetcore3.1",
+                    "description": "Demo Lambda Function that runs process2",
+                    "memorySize": 512,
+                    "timeout": 300
+                  }
+                }
+              },
+              "$LATEST": {
+                "id": "$LATEST",
+                "path": "StepFunctionDemoStack/Process2Function/$LATEST"
+              }
+            }
+          },
+          "Process11Function": {
+            "id": "Process11Function",
+            "path": "StepFunctionDemoStack/Process11Function",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "StepFunctionDemoStack/Process11Function/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "StepFunctionDemoStack/Process11Function/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "StepFunctionDemoStack/Process11Function/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "StepFunctionDemoStack/Process11Function/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "StepFunctionDemoStack/Process11Function/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "StepFunctionDemoStack/Process11Function/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3BucketB3AF5EC0"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "Demo.Services.Lambda::Demo.Services.Lambda.Functions::Process11Function",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "Process11FunctionServiceRoleD344F4A8",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "dotnetcore3.1",
+                    "description": "Demo Lambda Function that runs job process1",
+                    "memorySize": 512,
+                    "timeout": 300
+                  }
+                }
+              }
+            }
+          },
+          "Process12Function": {
+            "id": "Process12Function",
+            "path": "StepFunctionDemoStack/Process12Function",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "StepFunctionDemoStack/Process12Function/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "StepFunctionDemoStack/Process12Function/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "StepFunctionDemoStack/Process12Function/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "StepFunctionDemoStack/Process12Function/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*",
+                                    "s3:DeleteObject*",
+                                    "s3:PutObject*",
+                                    "s3:Abort*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "StepFunctionDemoBucket685F728F",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "StepFunctionDemoBucket685F728F",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "Process12FunctionServiceRoleDefaultPolicy5BFD3633",
+                            "roles": [
+                              {
+                                "Ref": "Process12FunctionServiceRole48072318"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "StepFunctionDemoStack/Process12Function/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "StepFunctionDemoStack/Process12Function/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "StepFunctionDemoStack/Process12Function/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "StepFunctionDemoStack/Process12Function/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3BucketB3AF5EC0"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersd858411c118a395d3fa1bd3f6ad6d741268da820c118b062e52ef012ba15126eS3VersionKeyA8D042E8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "Demo.Services.Lambda::Demo.Services.Lambda.Functions::Process12Function",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "Process12FunctionServiceRole48072318",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "dotnetcore3.1",
+                    "description": "Demo Lambda Function that runs job process2",
+                    "environment": {
+                      "variables": {
+                        "STEP_FUNCTION_DEMO_BUCKET": {
+                          "Ref": "StepFunctionDemoBucket685F728F"
+                        }
+                      }
+                    },
+                    "memorySize": 512,
+                    "timeout": 300
+                  }
+                }
+              }
+            }
+          },
+          "OddEvenFunction": {
+            "id": "OddEvenFunction",
+            "path": "StepFunctionDemoStack/OddEvenFunction"
+          },
+          "Process1": {
+            "id": "Process1",
+            "path": "StepFunctionDemoStack/Process1"
+          },
+          "Process2": {
+            "id": "Process2",
+            "path": "StepFunctionDemoStack/Process2"
+          },
+          "Is the number Even?": {
+            "id": "Is the number Even?",
+            "path": "StepFunctionDemoStack/Is the number Even?"
+          }
+        }
+      }
+    }
+  }
+}

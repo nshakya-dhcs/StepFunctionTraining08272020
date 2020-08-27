@@ -1,0 +1,77 @@
+{
+    "Comment": "Odd Even With Job",
+    "StartAt": "OddEvenFunction",
+    "States": {
+      "OddEvenFunction": {
+        "Comment": "This performs process2",
+        "Type": "Task",
+        "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-OddOrEvenFunction81FC086C-IBYRK04324X9:$LATEST",
+        "Next": "Is Number Even?"
+      },
+      "Is Number Even?": {
+        "Comment": "This performs process2",
+        "Type": "Choice",
+        "Choices": [
+          {
+            "Variable": "$.Result",
+            "StringEquals": "Even",
+            "Next": "Process1"
+          },
+          {
+            "Variable": "$.Result",
+            "StringEquals": "Odd",
+            "Next": "Process2"
+          }
+        ]
+      },
+      "Process1": {
+        "Comment": "This performs process1",
+        "Type": "Task",
+        "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-Process1Function64F04A06-17G938HNXVVVD:$LATEST",
+        "Next": "Process11"
+      },
+      "Process11": {
+        "Comment": "This performs process11",
+        "Type": "Task",
+        "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-Process11Function70180133-E0ODIGT1W68L:$LATEST",
+	"ResultPath":"$.Resolved",
+        "Next": "Is Resolved Or Overriden?"
+      },
+      "Is Resolved Or Overriden?": {
+        "Comment": "Condition to check Resolved Or Overriden",
+        "Type": "Choice",
+        "Choices": [
+          {
+          "Or":[
+            {
+            "Variable": "$.Resolved",
+            "BooleanEquals": true
+            },
+            {
+            "Variable": "$.Override",
+            "BooleanEquals": true
+            
+            }
+          ],
+          "Next": "Process12"
+         } 
+        ],
+        "Default":"Process2"
+      }
+      
+      ,
+      "Process12": {
+        "Comment": "This performs process12",
+        "Type": "Task",
+        "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-Process12FunctionD2B0C67B-M19KXQA7WANM:$LATEST",
+        "End": true
+      }
+      ,
+      "Process2": {
+        "Comment": "This performs process2",
+        "Type": "Task",
+        "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-Process2Function273202F1-115XZSGTN9SJA:$LATEST",
+        "End": true
+      }
+    }
+  }

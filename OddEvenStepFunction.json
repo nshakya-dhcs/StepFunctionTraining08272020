@@ -1,0 +1,40 @@
+{
+  "Comment": "Basic State Machine",
+  "StartAt": "OddEvenFunction",
+  "States": {
+    "OddEvenFunction": {
+      "Comment": "This performs process2",
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-OddOrEvenFunction81FC086C-IBYRK04324X9:$LATEST",
+      "Next": "Is Number Even?"
+    },
+    "Is Number Even?": {
+      "Comment": "This performs process2",
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.Result",
+          "StringEquals": "Even",
+          "Next": "Process1"
+        },
+        {
+          "Variable": "$.Result",
+          "StringEquals": "Odd",
+          "Next": "Process2"
+        }
+      ]
+    },
+    "Process1": {
+      "Comment": "This performs process1",
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-Process1Function64F04A06-17G938HNXVVVD:$LATEST",
+      "End": true
+    },
+    "Process2": {
+      "Comment": "This performs process2",
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-Process2Function273202F1-115XZSGTN9SJA:$LATEST",
+      "End": true
+    }
+  }
+}

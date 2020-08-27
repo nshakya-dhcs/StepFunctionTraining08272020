@@ -1,0 +1,18 @@
+{
+  "Comment": "Basic State Machine",
+  "StartAt": "Process1",
+  "States": {
+    "Process1": {
+      "Comment": "This performs process1",
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-Process1Function64F04A06-17G938HNXVVVD",
+      "Next": "Process2"
+    },
+    "Process2": {
+      "Comment": "This performs process2",
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:342600918501:function:StepFunctionDemoStack-Process2Function273202F1-115XZSGTN9SJA",
+      "End": true
+    }
+  }
+}
